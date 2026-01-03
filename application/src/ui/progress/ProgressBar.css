@@ -1,0 +1,24 @@
+.progress-track {
+    height: 22px;
+    background-color: #cad6e2;
+    overflow: hidden;
+    position: relative;
+}
+
+.progress-fill {
+    height: 100%;
+    background-color: #4ae07d;
+    transition: with 0.25s ease;
+}
+
+.progress-track, .progress-fill {
+    border-radius: 20px;
+}
+
+span {
+    position: absolute;
+    font-weight: bold;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}

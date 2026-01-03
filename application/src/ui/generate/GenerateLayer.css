@@ -1,0 +1,10 @@
+.generate-layer {
+    width: 50vw;
+    display: grid;
+    grid-template-columns: 10fr 3fr 1fr;
+    align-items: center;
+    gap: 1em;
+    height: 20px;
+    position: relative;
+    margin: auto;
+}
