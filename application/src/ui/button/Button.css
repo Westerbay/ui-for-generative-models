@@ -12,12 +12,28 @@ button {
   position: relative;
 }
 
+button:disabled {
+  cursor: not-allowed;
+}
+
 button:hover {
   border-color: orange;
 }
 
 button img {
   height: 100%;
+}
+
+button.cancel, button.generate {
+  color: white
+}
+
+button.cancel {
+  background-color: #f55959;
+}
+
+button.generate {
+  background-color: #4577f6;
 }
 
 @media (prefers-color-scheme: light) {

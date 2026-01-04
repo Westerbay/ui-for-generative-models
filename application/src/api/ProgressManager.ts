@@ -21,7 +21,8 @@ export class ProgressManager {
     }
 
     getPercentageFloat(): number {
-        return (this.value / this.max) * 100;
+        const percentage = (this.value / this.max) * 100;
+        return parseFloat(percentage.toFixed(2));
     }
 
     setMax(max: number) {

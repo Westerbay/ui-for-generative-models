@@ -7,11 +7,11 @@ type ProgressBarProps = {
 };
 
 export default function ProgressBar({ manager }: ProgressBarProps) {
-    const [percent, setPercent] = useState(manager.getPercentage());
+    const [percent, setPercent] = useState(manager.getPercentageFloat());
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setPercent(manager.getPercentage());
+            setPercent(manager.getPercentageFloat());
         }, 100);
 
         return () => clearInterval(interval);

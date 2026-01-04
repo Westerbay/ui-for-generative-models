@@ -28,6 +28,7 @@ function downloadAllImages(
 export default function GenerateLayer({ client }: GenerateLayerProps) {
         
     const [running, setRunning] = useState(client.isRunning());
+    const [batchSize, setBatchSize] = useState<number>(1);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -40,11 +41,22 @@ export default function GenerateLayer({ client }: GenerateLayerProps) {
     return (
         <aside className="generate-layer">
             <ProgressBar manager={client.getProgress()} />
+            <label htmlFor="batchSize">Batch size:</label>
+            <input
+                type="number"
+                min={1}
+                max={4}
+                value={batchSize}
+                onChange={e => 
+                    setBatchSize(Math.min(4, Math.max(1, +e.target.value)))
+                }
+            />
             <Button 
-                label={running ? "Stop" : "Generate"}
+                className={running ? "cancel" : "generate"}
+                label={running ? "Cancel" : "Generate"}
                 onClick={running ? 
                     () => {client.stop()} : 
-                    () => {client.start(1)}
+                    () => {client.start(batchSize)}
                 }
             />
             <ImageButton 

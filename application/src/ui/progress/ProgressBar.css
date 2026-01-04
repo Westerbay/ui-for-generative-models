@@ -1,6 +1,6 @@
 .progress-track {
-    height: 22px;
-    background-color: #cad6e2;
+    height: 30px;
+    background-color: #f9f9f9;
     overflow: hidden;
     position: relative;
 }
@@ -21,4 +21,10 @@ span {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+}
+
+@media (prefers-color-scheme: light) {
+    .progress-track {
+        background-color: #dbe0e4;
+    }
 }

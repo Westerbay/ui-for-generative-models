@@ -14,6 +14,7 @@ export class LDMClient {
 	}
 
 	async start(batchSize: number = 1) {
+		this.progress.reset();
 		const res = await fetch(`/api/start?batch_size=${batchSize}`);
 		if (!res.ok) throw new Error("Failed to start, please verify that a ldm api is running");
 		this.running = true;
@@ -32,7 +33,7 @@ export class LDMClient {
 
 		const data = await res.json();
 
-		if (data.done) {
+		if ("message" in data) {
 			this.running = false;
 			return null;
 		}
@@ -57,7 +58,6 @@ export class LDMClient {
 
 	stop() {
 		this.running = false;
-		this.progress.reset();
 	}
 
 }

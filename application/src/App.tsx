@@ -10,6 +10,7 @@ function App() {
   return (
     <>
       <h1>Generative AI Models</h1>
+      <p>An academic project demonstrating image generation with a Diffusion Transformer (DiT).</p>
       <ImageLayer client={client}/>
       <GenerateLayer client={client}/>
     </>

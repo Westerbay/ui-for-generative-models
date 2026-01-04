@@ -9,12 +9,12 @@ type ImageLayerProps = {
 
 export default function ImageLayer({ client }: ImageLayerProps) {
 
-    const [images, setImages] = useState<string[]>([]);
+    const [images, setImages] = useState<string[]>(["./template.png"]);
     
         useEffect(() => {
             const interval = setInterval(() => {
                 const urls = client.getUrls();
-                setImages(urls);
+                if (urls.length != 0) setImages(urls);
             }, 100);
     
             return () => clearInterval(interval);
