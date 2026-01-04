@@ -19,7 +19,7 @@
 }
 
 
-@media (max-width: 670px) {
+@media (max-width: 700px) {
     .image-layer {
         display: block;
         max-width: 90%;
