@@ -1,8 +1,8 @@
 .generate-layer {
-    width: 40vw;
-    min-width: 600px;
+    max-width: 90%;
+    min-width: 40vw;
     display: grid;
-    grid-template-columns: 10fr 2fr 1fr 2fr 1fr;
+    grid-template-columns: 10fr 100px 1fr 2fr 1fr;
     align-items: center;
     gap: 1em;
     position: relative;
@@ -11,5 +11,19 @@
 
 .generate-layer label {
     font-weight: bold;
-    font-size: 1.2em;
+    font-size: 1.1em;
+}
+
+.generate-layer input {
+    height: 60%;
+}
+
+@media (max-width: 670px) {
+    .generate-layer {
+        grid-template-columns: 100px 1fr 1fr 1fr;
+    }
+
+    .generate-layer > :first-child {
+        grid-column: 1 / -1;
+    }
 }
